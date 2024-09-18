@@ -262,6 +262,21 @@ namespace LogicAppUnit.Helper
             return ConvertStreamToString(xmlCanonical);
         }
 
+        /// <summary>
+        /// Format a string to enable reliable comparison for test assertions.
+        /// </summary>
+        /// <param name="stringInput">The  string to be formatted.</param>
+        /// <returns>The formatted string.</returns>
+        /// <remarks>
+        /// Carraige returns are standardised to \n in the string , this means that carraige returns wont break any test assertions.
+        /// </remarks>
+        public static string FormatString(string stringInput)
+        {
+            // Replace any local server names with 'localhost'
+
+            return stringInput.Replace("\r\n", "\n");
+        }
+
         #endregion // Formatting
     }
 }
