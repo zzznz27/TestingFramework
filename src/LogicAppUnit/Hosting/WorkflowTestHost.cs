@@ -117,7 +117,7 @@ namespace LogicAppUnit.Hosting
                         Console.WriteLine(outputData);
                     }
 
-                    if (outputData != null && outputData.Contains("Host started") && !processStarted.Task.IsCompleted)
+                    if (outputData != null  && outputData.Contains("WorkflowDispatcher: edgeWorkflowRuntimeTrigger")&& !processStarted.Task.IsCompleted)
                     {
                         processStarted.SetResult(true);
                     }
